@@ -1,0 +1,801 @@
+/* styles.css */
+
+:root {
+    --theme-blue: #003399;
+    --theme-purple: #6a4cff;
+    --theme-cyan: #00d1ff;
+    --accent-gold: #ffd166;
+    --text-dark: #212529;
+    --text-light: #495057;
+    --background-white: #ffffff;
+    --background-light: #eef2ff;
+    --border-color: #dee2e6;
+    --accent: #fb8c00; /* refined orange for better readability */
+    --accent-strong: #ef6c00; /* deeper shade for lines/accents */
+    --accent-muted: rgba(251, 140, 0, 0.08); /* subtle background tint */
+    --link-color: #374151; /* neutral slate */
+    --link-hover: #111827;
+    --brand: #00aeef; /* requested brand cyan for titles */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', 'Arial', sans-serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background: radial-gradient(1200px 800px at 10% 10%, #fff7ed 0%, transparent 60%),
+                radial-gradient(800px 600px at 90% 20%, #fef3c7 0%, transparent 55%),
+                linear-gradient(120deg, #fffdfa 0%, #fbfbfb 40%, #ffffff 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Unified accent across scenarios (orange) */
+
+body.landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: -20vh -20vw;
+    z-index: -1;
+    background: radial-gradient(45% 45% at 20% 30%, rgba(251, 140, 0, 0.10) 0%, rgba(0,0,0,0) 60%),
+                radial-gradient(35% 35% at 80% 20%, rgba(245, 158, 11, 0.08) 0%, rgba(0,0,0,0) 60%),
+                radial-gradient(30% 30% at 60% 80%, rgba(239, 108, 0, 0.08) 0%, rgba(0,0,0,0) 60%);
+    filter: blur(20px);
+    animation: floatBg 26s linear infinite alternate;
+}
+
+body::after {
+    animation-duration: 32s;
+    transform: scale(1.05);
+}
+
+.container {
+    position: relative;
+    max-width: 980px;
+    margin: 30px auto;
+    padding: 56px 64px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow: hidden;
+    animation: fadeUp 800ms ease-out both;
+}
+
+body.landing .container {
+    text-align: center;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(239, 108, 0, 0.14), rgba(251, 140, 0, 0.10), rgba(245, 158, 11, 0.10));
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px; /* creates a glowing border */
+    border-radius: 20px;
+    animation: shimmer 8s linear infinite;
+}
+
+h1 {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    line-height: 1.15;
+    background: linear-gradient(90deg, #111827, var(--brand), #6b7280);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 12s ease-in-out infinite;
+    letter-spacing: 0.5px;
+}
+
+h1 + p {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: var(--text-light);
+    margin: 0 0 44px 0;
+}
+
+.brand { margin-bottom: 12px; text-align: center; }
+.brand-logo {
+    width: 88px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    animation: float 9s ease-in-out infinite;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+.btn {
+    --btn-start: var(--theme-blue);
+    --btn-end: var(--theme-purple);
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--background-white);
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    font-size: 1.05rem;
+    padding: 14px 28px;
+    border-radius: 999px;
+    min-width: 260px;
+    background: linear-gradient(135deg, var(--btn-start), var(--btn-end));
+    background-size: 160% 160%;
+    box-shadow: 0 10px 25px rgba(0, 51, 153, 0.25);
+    transition: transform 240ms ease, box-shadow 240ms ease, filter 240ms ease, background-position 400ms ease;
+    will-change: transform, filter;
+}
+
+.button-container .btn { animation: fadeUp 700ms ease-out both; }
+/* REMOVED nth-child animation delays */
+
+.btn:hover {
+    transform: translateY(-4px);
+    background-position: 20% 50%;
+    box-shadow: 0 16px 40px rgba(0, 51, 153, 0.35);
+    filter: brightness(1.05);
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 209, 255, 0.25), 0 10px 25px rgba(0, 51, 153, 0.25);
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: radial-gradient(120% 120% at 50% 10%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 60%),
+                radial-gradient(90% 90% at 90% 90%, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 60%);
+    z-index: -1;
+    transition: opacity 240ms ease;
+    opacity: 0.6;
+}
+
+.btn:hover::after { opacity: 0.85; }
+
+/* REMOVED nth-child button color styles */
+
+.site-note {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.site-note .eu-mark { height: 28px; width: auto; }
+
+.back-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--link-color);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px 16px;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: all 0.2s ease;
+}
+
+.back-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    background-color: white;
+}
+
+@media (min-width: 768px) {
+    /* This rule is now overridden by the more specific 
+       .age-group-container .button-container rule, which is fine. */
+    .button-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0.6; }
+}
+
+@keyframes floatBg {
+    from { transform: translateY(-2%) translateX(0%); }
+    to   { transform: translateY(2%) translateX(2%); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Styles for sub-pages */
+.container h2 {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--accent-strong);
+    padding-bottom: 8px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    scroll-margin-top: 90px; /* better anchor positioning below back-link */
+}
+
+.container h3 {
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-left: 12px;
+    position: relative;
+}
+
+.container h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.32em;
+    width: 6px;
+    height: 1.05em;
+    border-radius: 4px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+}
+
+.container h4 {
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.container p, .container ul, .container ol {
+    margin-bottom: 18px;
+    font-size: 1.05em;
+}
+
+.container ul, .container ol {
+    padding-left: 30px;
+}
+
+.container li {
+    margin-bottom: 10px;
+}
+
+.container strong {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.info-block {
+    background-color: var(--accent-muted);
+    border-left: 5px solid var(--accent);
+    padding: 20px 25px;
+    margin: 30px 0;
+    border-radius: 4px;
+}
+
+.info-block p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+.info-block p:first-child { margin-top: 0; }
+.info-block p:last-child { margin-bottom: 0; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--background-light);
+    font-weight: 700;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent-strong);
+}
+
+tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+.ref-list a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.ref-list a:hover {
+    color: var(--link-hover);
+}
+
+/* General inline links inside content */
+.container a:not(.btn) {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.container a:not(.btn):hover {
+    color: var(--link-hover);
+}
+
+/* --- Enhancements: Callouts, Table upgrades --- */
+
+/* Callout blocks */
+.callout {
+    border-left: 6px solid #9ca3af; /* neutral slate */
+    background: rgba(156, 163, 175, 0.08);
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin: 18px 0;
+}
+.callout .title { font-weight: 800; margin-bottom: 6px; }
+.callout.tip { border-left-color: #10b981; background: rgba(16, 185, 129, 0.08); }
+.callout.note { border-left-color: #3b82f6; background: rgba(59, 130, 246, 0.08); }
+.callout.caution { border-left-color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
+.callout.activity { border-left-color: #7c3aed; background: rgba(124, 58, 237, 0.08); }
+
+/* Table upgrades */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+.table-responsive table {
+    margin: 0; /* remove outer margins when wrapped */
+    border: 0; /* outer border handled by wrapper */
+}
+.table-responsive thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--background-white);
+    box-shadow: 0 1px 0 var(--border-color);
+}
+.table-caption {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-top: 8px;
+    text-align: left;
+}
+
+/* Subpage hero header */
+.hero {
+    background: var(--hero-bg, var(--accent-muted));
+    border: 1px solid var(--hero-border, rgba(239, 108, 0, 0.25));
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+.hero h1 { margin-bottom: 6px; }
+.hero .sub { color: var(--text-light); font-weight: 600; }
+
+/* Per-page hero color themes (non-orange) */
+body.scenario-story {
+    --hero-bg: rgba(14, 165, 164, 0.08);   /* teal */
+    --hero-border: rgba(13, 148, 136, 0.25);
+}
+body.scenario-ai {
+    --hero-bg: rgba(124, 58, 237, 0.08);   /* purple */
+    --hero-border: rgba(124, 58, 237, 0.25);
+}
+body.scenario-food {
+    --hero-bg: rgba(22, 163, 74, 0.08);    /* green */
+    --hero-border: rgba(22, 163, 74, 0.25);
+}
+
+
+/*
+=====================================================
+ NEW STYLES (Added for Age Groups & Scenario Pages)
+=====================================================
+*/
+
+/* --- NEW Main Title for Scenario Section --- */
+.scenarios-main-title {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 2.2rem; /* Larger than group titles */
+    font-weight: 800;
+    text-align: center;
+    color: var(--text-dark);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--accent);
+}
+
+
+/* --- Styles for Scenario Age Groups --- */
+
+.age-group-container {
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+/* MODIFIED: Changed h2 to h3, reduced font size */
+.age-group-container h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem; /* Reduced from 1.8rem */
+    text-align: left;
+    border-bottom: 3px solid;
+    padding-bottom: 10px;
+    /* Reset sub-page h3 styles */
+    padding-left: 0; 
+    color: var(--text-dark); /* Ensure color is set */
+}
+/* Remove h3::before pseudo-element for these */
+.age-group-container h3::before {
+    display: none;
+}
+
+
+/* * This is the fix for your button wrapping issue.
+  * It overrides the default '.button-container' (which is 'column')
+  * and forces it to be a wrapping row, aligned left.
+*/
+.age-group-container .button-container {
+    display: flex;
+    flex-direction: row; /* Override default 'column' */
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align buttons to the left */
+    gap: 10px; /* Add spacing between buttons */
+    align-items: center; /* Override default */
+}
+
+.age-group-container .btn {
+    margin: 5px 0; /* Remove side margin, use gap instead */
+    min-width: 220px; /* Make buttons slightly smaller to fit more */
+}
+
+
+/* --- Age Group Colors --- */
+
+/* Age 3-7 (e.g., Light Green) */
+.group-age-3-7 {
+    border-color: #92D050;
+    background-color: #F4FBEE;
+}
+.group-age-3-7 h3 {
+    color: #5a8a22;
+    border-color: #c5e1a5;
+}
+
+/* Age 8-12 (e.g., Light Blue) */
+.group-age-8-12 {
+    border-color: #00AEEF;
+    background-color: #E7F7FE;
+}
+.group-age-8-12 h3 {
+    color: #0078a3;
+    border-color: #b3e5fc;
+}
+
+/* Age 13-16 (e.g., Light Orange) */
+.group-age-13-16 {
+    border-color: #ED7D31;
+    background-color: #fef3e9;
+}
+.group-age-13-16 h3 {
+    color: #b55d1c;
+    border-color: #fcd9b9;
+}
+
+
+/* --- Styles for Scenario Page Downloads --- */
+.downloads-section {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+}
+
+.downloads-section h3 {
+    margin-top: 0;
+    color: #333;
+    /* Reset h3 styles from main */
+    padding-left: 0;
+    border: none;
+    font-size: 1.5rem; /* Set explicit size */
+    margin-bottom: 1rem;
+}
+.downloads-section h3::before {
+    display: none; /* Hide the vertical accent bar */
+}
+
+
+.downloads-section .button-container {
+    display: flex;
+    flex-direction: row; /* Always be a row */
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start; /* Align left */
+}
+
+.btn-download {
+    background-color: #ED7D31; /* SmAIle Orange */
+    color: #fff;
+    font-weight: bold;
+    min-width: 240px; /* Consistent width */
+}
+.btn-download:hover {
+    background-color: #b55d1c;
+}
+
+.btn-secondary {
+    background-color: #595959; /* SmAIle Gray */
+}
+.btn-secondary:hover {
+    background-color: #333;
+}
+
+.secondary-downloads {
+    background-color: #fafafa;
+    border: 1px dashed #cfcfcf;
+    margin-top: 1rem;
+}
+
+.secondary-downloads h3 {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.secondary-downloads p {
+    color: #666;
+    margin-bottom: 0.75rem;
+}
+
+/* General class for all scenario pages */
+.scenario-page {
+    background-color: #fff;
+    color: #333;
+}
+/* Override the landing page container style */
+.scenario-page .container {
+    max-width: 900px;
+    margin: 90px auto 30px auto; /* Add top margin for back-link */
+    padding: 20px 40px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    /* Remove landing-page specific effects */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+.scenario-page .container::before {
+    display: none; /* Hide the glowing border */
+}
+
+/* =====================================================
+ NEW BUTTON THEME COLORS 
+=====================================================
+*/
+
+/* DEBATE (Purple) */
+.btn-debate {
+    --btn-start: #6a4cff;
+    --btn-end: #b794ff;
+}
+
+/* A BITE OF THE FUTURE (Green) */
+.btn-bite {
+    --btn-start: #10b981;
+    --btn-end: #34d399;
+}
+
+/* TRAINING AI (Orange) */
+.btn-training {
+    --btn-start: #ED7D31;
+    --btn-end: #f59e0b;
+}
+
+/* STORYTELLING (Teal) */
+.btn-story {
+    --btn-start: #00c2a8;
+    --btn-end: #30e8bf;
+}
+
+/* AI ARTS & MUSIC (Red/Pink) */
+.btn-arts {
+    --btn-start: #ec4899;
+    --btn-end: #f472b6;
+}
+
+/* HOW AI LEARNS (Blue) */
+.btn-learns {
+    --btn-start: #0066ff;
+    --btn-end: #00d1ff;
+}
+
+/* --- TBD / Coming Soon Styles --- */
+
+/* The TBD Button Style */
+.btn.tbd {
+    /* 1. Keep the original shape & color, just dim it */
+    opacity: 0.6;                
+    filter: grayscale(0.3);      /* Slightly wash out the color */
+    
+    /* 2. Positioning for the badge */
+    position: relative;          
+    overflow: visible;           /* Allow badge to stick out of the corner */
+    
+    /* 3. Interaction */
+    cursor: help;                /* Shows a '?' cursor to indicate it's special */
+}
+
+.btn.tbd:hover {
+    /* Slight lift on hover, but less than active buttons */
+    transform: translateY(-2px); 
+    opacity: 0.8;
+    filter: grayscale(0);        /* Bring color back on hover */
+}
+
+/* The "TBD" Badge (Mini Version) */
+.btn.tbd::after {
+    content: "TBD";
+    position: absolute;
+    
+    /* Position: Tucked tightly in the corner */
+    top: -5px;
+    right: -5px;
+    
+    /* Size: Force it to fit content only */
+    width: auto;
+    height: auto;
+    padding: 2px 4px;      /* Minimal padding */
+    line-height: 1;        /* Prevents extra height */
+    
+    /* Visuals */
+    background-color: #333;
+    color: #fff;
+    font-size: 0.7rem;     /* Kept as requested */
+    font-weight: 900;
+    border-radius: 3px;
+    
+    /* Styling */
+    border: 1px solid #fff; /* Thinner border */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    transform: rotate(0deg); /* Removed rotation to keep it neat */
+    z-index: 10;
+}
+
+/* Infographic Grid Layout */
+.infographic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.info-card {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.info-card h4 {
+    color: var(--brand);
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+/* Reusing your existing button styles for the download links */
+.info-card .btn {
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+.info-card a img {
+    cursor: zoom-in;
+    transition: opacity 0.2s;
+}
+
+.info-card a img:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,15 @@
+Guia de revisão
+
+Reveja as páginas e os materiais na sua língua. As traduções são provisórias; algumas ilustrações e anexos originais ainda estão em inglês.
+
+Verifique se a linguagem é natural e se as instruções das atividades, as faixas etárias, as durações e os critérios de avaliação são claros e corretos. Assinale também texto em falta, ligações que não funcionam ou problemas de legibilidade.
+
+Envie as suas sugestões ao coordenador do projeto no formato que lhe for mais conveniente: mensagem, texto simples, documento Word ou PDF com texto selecionável. Os comentários em formato livre são bem-vindos; não é necessário preencher um formulário ou uma folha de cálculo.
+
+Se possível, indique a língua e o URL da página ou o nome do documento. Cite o texto que pretende alterar e proponha uma substituição. Se não souber como corrigir, descreva simplesmente o problema.
+
+Exemplo: português — [URL da página ou nome do documento] — Texto atual: … — Texto sugerido: …
+
+As imagens, obras de arte, capturas de ecrã e conjuntos de dados em inglês podem permanecer inalterados quando servem de exemplos. As ilustrações com instruções ou rótulos necessários à atividade serão revistas separadamente. Os MOOC serão revistos quando o seu conteúdo estiver pronto.
+
+Obrigado por ajudar a melhorar os materiais do projeto.

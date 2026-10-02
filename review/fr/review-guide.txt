@@ -1,0 +1,15 @@
+Guide de relecture
+
+Veuillez relire les pages et les documents dans votre langue. Il s’agit de traductions provisoires ; certaines illustrations et pièces jointes originales sont encore en anglais.
+
+Vérifiez que les formulations sont naturelles et que les consignes, les tranches d’âge, les durées et les critères d’évaluation sont clairs et exacts. Signalez aussi les textes manquants, les liens défectueux ou les mises en page illisibles.
+
+Envoyez vos suggestions au coordinateur du projet dans le format qui vous convient : message, texte simple, document Word ou PDF avec du texte sélectionnable. Les commentaires libres sont les bienvenus ; aucun formulaire ni tableau n’est obligatoire.
+
+Si possible, indiquez la langue et l’URL de la page ou le nom du document. Citez le passage à modifier et proposez une nouvelle formulation. Si vous ne savez pas comment le corriger, décrivez simplement le problème.
+
+Exemple : français — [URL de la page ou nom du document] — Formulation actuelle : … — Formulation proposée : …
+
+Les images, œuvres d’art, captures d’écran et jeux de données en anglais peuvent rester inchangés lorsqu’ils servent d’exemples. Les illustrations dont les consignes ou les étiquettes sont nécessaires à l’activité seront examinées séparément. Les MOOC seront relus lorsque leur contenu sera prêt.
+
+Merci de contribuer à l’amélioration de ces documents du projet.

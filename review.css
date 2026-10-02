@@ -1,0 +1,10 @@
+/* Partner-preview banner and short review guide. */
+.partner-review-banner { background: #fff4cf; color: #252525; border-bottom: 2px solid #b78213; padding: .75rem 1rem; font: 16px/1.5 system-ui, sans-serif; overflow-wrap: anywhere; position: relative; z-index: 1; }
+.partner-review-banner strong, .partner-review-banner small { display: block; }
+.partner-review-banner a { color: #164477; text-decoration: underline; }
+.review-guide { max-width: 48rem; padding: 1rem; margin: auto; font: 17px/1.55 system-ui, sans-serif; color: #252525; overflow-wrap: anywhere; }
+.review-guide nav { display: flex; flex-wrap: wrap; gap: .7rem; }
+.review-guide a { color: #164477; }
+.review-guide [aria-current="page"] { font-weight: bold; }
+.review-guide h1 { font-size: 1.7rem; line-height: 1.3; }
+@media print { .partner-review-banner, .review-guide nav { display: none; } }

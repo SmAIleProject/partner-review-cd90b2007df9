@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comment l’IA apprend et résout des problèmes (13-16) | Projet SmAIle</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Merriweather:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<script src="../scripts.js"></script>
+<style>
+        /* Custom Theme for How AI Learns (Blue) */
+        body.scenario-learns {
+            --hero-bg: rgba(0, 102, 255, 0.08);
+            --hero-border: rgba(0, 102, 255, 0.25);
+        }
+    </style>
+<link data-language-alternate="" href="../scenario_how_ai_learns_13-16.html" hreflang="en" rel="alternate"/><link data-language-alternate="" href="../fr/scenario_how_ai_learns_13-16.html" hreflang="fr" rel="alternate"/><link data-language-alternate="" href="../hr/scenario_how_ai_learns_13-16.html" hreflang="hr" rel="alternate"/><link data-language-alternate="" href="../pt/scenario_how_ai_learns_13-16.html" hreflang="pt-PT" rel="alternate"/><link data-language-alternate="" href="../es/scenario_how_ai_learns_13-16.html" hreflang="es" rel="alternate"/><link data-multilingual="" href="../languages.css" rel="stylesheet"/><script data-multilingual="" defer="" src="../languages.js"></script><meta content="noindex, nofollow" name="robots"/><link href="../review.css" rel="stylesheet"/></head>
+<body class="scenario-page scenario-learns"><aside aria-label="Version de relecture pour les partenaires" class="partner-review-banner"><strong>Version de relecture pour les partenaires</strong><a href="../review/fr/index.html">Guide de relecture</a><small data-review-revision="">Version de relecture: 2026-10-02 / eaf5944ce5f2</small></aside><nav aria-label="Langue" class="language-selector" data-multilingual=""><span class="language-label">Langue:</span><a aria-label="English" data-language="en" href="../scenario_how_ai_learns_13-16.html" hreflang="en" lang="en" title="English">EN<span class="language-full-name"> English</span></a><a aria-current="page" aria-label="Français" data-language="fr" href="../fr/scenario_how_ai_learns_13-16.html" hreflang="fr" lang="fr" title="Français">FR<span class="language-full-name"> Français</span></a><a aria-label="Hrvatski" data-language="hr" href="../hr/scenario_how_ai_learns_13-16.html" hreflang="hr" lang="hr" title="Hrvatski">HR<span class="language-full-name"> Hrvatski</span></a><a aria-label="Português" data-language="pt" href="../pt/scenario_how_ai_learns_13-16.html" hreflang="pt-PT" lang="pt-PT" title="Português">PT<span class="language-full-name"> Português</span></a><a aria-label="Español" data-language="es" href="../es/scenario_how_ai_learns_13-16.html" hreflang="es" lang="es" title="Español">ES<span class="language-full-name"> Español</span></a></nav><p class="translation-note" data-multilingual="">Traduction provisoire — en attente de relecture.</p>
+<a class="back-link" href="scenarios.html">← Retour aux scénarios</a>
+<div class="container">
+<div class="hero">
+<h1 data-source-id="" id="section-1">Comment l’IA apprend et résout des problèmes</h1>
+<p class="sub">Dans cet atelier, les élèves (13-16) vont au-delà de l'hype pour comprendre comment l'IA fonctionne réellement. Grâce à des simulations pratiques avec l'apprentissage automatique et les réseaux neuronaux, ils apprennent à différencier les types d'IA et à concevoir leurs propres solutions conceptuelles pour les problèmes du monde réel.</p>
+</div>
+<div class="downloads-section">
+<h3 data-source-id="" id="section-2">Ressources et téléchargements</h3>
+<p>Téléchargez les versions PDF de ce scénario ou les annexes associées.</p>
+<div class="button-container">
+<a class="btn btn-download btn-learns" href="../pdfs/fr/scenario_how_ai_learns_13-16_document.pdf" target="_blank">Télécharger le PDF (document)<span class="resource-language"> (traduction provisoire)</span></a>
+<a class="btn btn-download btn-learns" href="../pdfs/fr/scenario_how_ai_learns_13-16_pamphlet.pdf" target="_blank">Télécharger le PDF (dépliant)<span class="resource-language"> (traduction provisoire)</span></a>
+<a class="btn btn-download btn-secondary" href="https://smaileproject.github.io/attachments/scenario_how_ai_learns_13-16_attachments.zip" hreflang="en">Télécharger les annexes (.zip)<span class="resource-language"> (en anglais)</span></a><span class="editable-download" data-multilingual=""><br/><a href="../attachments/fr/scenario_how_ai_learns_13-16_editable.zip" hreflang="fr">Fichiers Word et PowerPoint traduits (version provisoire)</a></span>
+</div>
+</div>
+<div class="downloads-section secondary-downloads">
+<h3 data-source-id="" id="section-3">Documents de travail modifiables</h3>
+<p>Ces fichiers modifiables sont proposés comme documents de travail pour les enseignants.</p>
+<div class="button-container">
+<a class="btn btn-download btn-learns" href="../teacher_guides/fr/scenario_how_ai_learns_13-16_guide.docx" target="_blank">Guide pédagogique modifiable (.docx)<span class="resource-language"> (traduction provisoire)</span></a>
+</div>
+</div>
+<div class="info-block">
+<p><strong>Public cible :</strong> 13 - 16 ans</p>
+<p><strong>Durée de l’activité :</strong> 135 minutes</p>
+<p><strong>Principaux objectifs pédagogiques :</strong></p>
+<ul>
+<li><strong>Les fondements de l'IA:</strong> Introduire les concepts fondamentaux de l'intelligence artificielle et de la façon dont elle apprend.</li>
+<li><strong>Les paradigmes d'apprentissage:</strong> Expliquez des méthodes telles que l'apprentissage supervisé, l'apprentissage renforcé et la vision par ordinateur.</li>
+<li><strong>Application dans le monde réel:</strong> Parallèlement des outils d'IA aux problèmes appropriés dans des secteurs tels que la durabilité et l'écologie.</li>
+<li><strong>L'innovation</strong> Concevoir un concept de base pour une solution basée sur l'IA à un problème spécifique.</li>
+</ul>
+</div>
+<h2 data-source-id="" id="section-4">Résultats d’apprentissage</h2>
+<p>Les élèves seront capables de :</p>
+<h4 data-source-id="" id="section-5">CONNAISSANCES ET COMPRÉHENSION :</h4>
+<ul>
+<li>Définir ce qu'est l'intelligence artificielle et articuler les concepts de base de la façon dont elle apprend.</li>
+<li>Identifier et expliquer les principaux paradigmes d'apprentissage de l'IA (par exemple, apprentissage par renforcement, apprentissage supervisé, LLM).</li>
+<li>Reconnaître différents types d'IA et les adapter aux problèmes réels appropriés.</li>
+</ul>
+<h4 data-source-id="" id="section-6">COMPÉTENCES ET APTITUDES :</h4>
+<ul>
+<li>Développer des compétences en pensée critique pour différencier le contenu généré par l'homme et l'IA.</li>
+<li>Appliquer la compréhension de l'IA à la conception de solutions conceptuelles pour les défis liés au développement durable.</li>
+<li>Travaillez en collaboration pour réfléchir et présenter des idées.</li>
+</ul>
+<h4 data-source-id="" id="section-7">ATTITUDES ET VALEURS :</h4>
+<ul>
+<li>Comprenez que l'IA est un outil d'innovation et de résolution de problèmes.</li>
+<li>Réfléchissez à des considérations éthiques telles que la vie privée, l'inclusion et la transparence.</li>
+</ul>
+<h2 data-source-id="" id="section-8">Dimension européenne / lien avec Erasmus+</h2>
+<ul>
+<li><strong>Transformation numérique:</strong> doter les élèves de compétences numériques essentielles.</li>
+<li><strong>La durabilité:</strong> En mettant l'accent sur les solutions d'IA pour les problèmes écologiques et environnementaux.</li>
+<li><strong>Éthique et inclusion:</strong> Promouvoir l'utilisation responsable de l'IA et la compréhension des biais.</li>
+</ul>
+<h2 data-source-id="" id="section-9">1. Ressources et outils</h2>
+<h3 data-source-id="" id="section-10">Les outils numériques:</h3>
+<ul>
+<li><strong>Simulations:</strong> Teachable Machine (Google), Quick, Draw!.</li>
+<li><strong>L'IA génératrice:</strong> ChatGPT, Gemini ou Copilot (pour les demandes de test).</li>
+<li><strong>Présentation:</strong> Padlet ou PowerPoint.</li>
+</ul>
+<h3 data-source-id="" id="section-11">Matériel nécessaire :</h3>
+<ul>
+<li>Les ordinateurs et tablettes avec accès à Internet.</li>
+<li>Projecteur/tableau intelligent.</li>
+<li>Cartes de jeu correspondantes (physiques ou numériques).</li>
+</ul>
+<h3 data-source-id="" id="section-12">Liens utiles :</h3>
+<ul>
+<li><a href="https://www.fao.org/home/en/" target="_blank">La FAO</a></li>
+<li><a href="https://hai.stanford.edu/ai-index" target="_blank">Stanford HAI Index de l'IA</a></li>
+<li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank">Révision technologique du MIT: IA</a></li>
+<li><a href="https://www.nih.gov/" target="_blank">Région de l'État</a></li>
+<li><a href="https://www.microsoft.com/en-us/ai/ai-for-earth" target="_blank">Microsoft AI pour la Terre</a></li>
+<li><a href="https://digital-strategy.ec.europa.eu" target="_blank">Stratégie numérique de l'UE</a></li>
+<li><a href="https://www.youtube.com/watch?v=JcXKbUIebrU" target="_blank">Vidéo d'introduction sur la façon dont l'IA apprend</a></li>
+</ul>
+<h3 data-source-id="" id="section-13">Supports pédagogiques :</h3>
+<ul>
+<li>Utilisez une feuille de travail de recherche, une liste de tâches et une minuterie visible pendant les activités de correspondance et de conception.</li>
+<li>Préparer une évaluation par les pairs Google Des formulaires, des diapositives d'introduction ou un court PPT pour l'explication d'ouverture.</li>
+</ul>
+<h2 data-source-id="" id="section-14">2. Méthodes de travail</h2>
+<ul>
+<li><strong>Lecture interactive:</strong> Une introduction intéressante aux concepts fondamentaux.</li>
+<li><strong>Simulation pratique:</strong> Formation directe des modèles pour comprendre "apprentissage".</li>
+<li><strong>Résolution de problèmes en collaboration:</strong> Travailler en groupe pour concevoir des solutions d'IA.</li>
+<li><strong>Apprentissage basé sur l'enquête:</strong> Il explore des études de cas réelles.</li>
+</ul>
+<h2 data-source-id="" id="section-15">Vue d’ensemble des activités</h2>
+<div class="table-responsive">
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Durée</th>
+<th>Activité</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Introduction</td>
+<td>15 minutes</td>
+<td>C'est quoi l'IA ?</td>
+<td><strong>Définition et débat:</strong> "Homme contre homme" AI. " Discuter des tâches que les humains font mieux (empathie) par rapport à L'IA (reconnaissance des modèles).</td>
+</tr>
+<tr>
+<td>Activité 1</td>
+<td>40 min</td>
+<td>La "boîte noire" de l'apprentissage</td>
+<td><strong>Simulation:</strong> En utilisant "Teachable Machine" pour former un modèle (images/ sons) et "Quick, Draw!"pour comprendre les réseaux neuronaux.</td>
+</tr>
+<tr>
+<td>Activité 2</td>
+<td>30 min</td>
+<td>AI dans le monde réel</td>
+<td><strong>Jeu de correspondance:</strong> Connecter les types d'IA (p. ex., vision informatique) aux problèmes du monde réel (p. ex., trier le recyclage).</td>
+</tr>
+<tr>
+<td>Activité 3</td>
+<td>35 minutes</td>
+<td>Résolvez un problème</td>
+<td><strong>Défi de conception:</strong> Les groupes proposent un concept d'IA pour résoudre un problème de durabilité. Je prototype un lancement.</td>
+</tr>
+<tr>
+<td>Réflexion</td>
+<td>15 minutes</td>
+<td>Évaluation</td>
+<td>Rubrique d'auto-évaluation et discussion de classe sur l'utilisation responsable de l'IA.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 data-source-id="" id="section-16">3. Introduction et motivation</h2>
+<h3 data-source-id="" id="section-17">C'est quoi l'IA ?</h3>
+<p><strong>Objectif :</strong> Définir l'IA et dissiper les mythes.</p>
+<ul>
+<li><strong>- Je vous en prie .</strong> Afficher des images générées par l'IA vs. L'art humain. Ils peuvent faire la différence ?</li>
+<li><strong>Définition:</strong> L' IA n' est pas magique; Il s'agit de maths et de données. Elle imite la cognition humaine (apprentissage et résolution de problèmes).</li>
+<li><strong>Comparaison:</strong> Discutez: "Qu'est-ce qui est facile pour un humain mais difficile pour un robot?" (par exemple, attacher des chaussures par rapport à un robot) calcul de pi).</li>
+</ul>
+<h2 data-source-id="" id="section-18">4. Recherche et apprentissage</h2>
+<h3 data-source-id="" id="section-19">Activité 1: La "boîte noire" de l'apprentissage automatique</h3>
+<p><strong>Objectif :</strong> Démystifier comment l'IA apprend.</p>
+<ul>
+<li><strong>Teachable Machine:</strong> Les élèves apprennent un modèle simple pour reconnaître les gestes (par exemple, "Thumbs Up" vs. "Thumbs Down") ou des sons.</li>
+<li><strong>Quick, Draw!:</strong> Les élèves jouent au jeu pour voir comment un réseau neural reconnaît les doodles.</li>
+<li><strong>Discussion :</strong> "L'IA est-elle devenue plus intelligente pendant que tu jouais ? Pourquoi ? " (Quantité de données et modèles).</li>
+</ul>
+<h3 data-source-id="" id="section-20">Activité 2: IA dans le monde réel</h3>
+<p><strong>Objectif :</strong> Connectez la théorie à la pratique.</p>
+<ul>
+<li><strong>Jeu de correspondance:</strong> Les élèves correspondent les "types d'IA" (LLM, vision informatique, systèmes de recommandation) aux "problèmes" (écriture de courriels, détection d'incendies forestiers, suggestion de films).</li>
+<li><strong>Études de cas:</strong> Discutez brièvement de la façon dont l'IA aide dans les soins de santé (diagnostication des rayons X) ou de l'environnement (tracking de la faune).</li>
+</ul>
+<h2 data-source-id="" id="section-21">5. Mise en pratique créative</h2>
+<h3 data-source-id="" id="section-22">Activité 3: Résoudre un problème avec l'IA</h3>
+<p><strong>Le défi:</strong> Identifier un problème (par exemple, trop de déchets plastiques) et concevoir une solution d'IA.</p>
+<ul>
+<li><strong>Le concept:</strong> "Nous utiliserons la vision informatique pour identifier les types de plastique sur une ceinture de transport".</li>
+<li><strong>Contrôle éthique:</strong> "Nos données sont-elles biaisées? C'est sûr ? "</li>
+<li><strong>Résultats:</strong> Une courte présentation ou affiche décrivant la solution.</li>
+</ul>
+<h2 data-source-id="" id="section-23">6. Réflexion et évaluation</h2>
+<h3 data-source-id="" id="section-24">Réflexions finales</h3>
+<ul>
+<li><strong>L'auto-évaluation:</strong> Les élèves remplissent la rubrique (Att 4.1).</li>
+<li><strong>Discussion :</strong> " Comment l'IA affectera-t-elle votre futur travail ? " " Faut-il faire confiance à l'IA pour tout ? "</li>
+<li><strong>Le point de départ:</strong> L'IA est un outil puissant, mais elle nécessite une surveillance humaine et une responsabilité éthique.</li>
+</ul> <div class="site-note" style="padding: 20px; text-align: center; font-family: sans-serif;">
+<div class="logos" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 12px;">
+<img alt="Cofinancé par l’Union européenne" class="eu-mark" src="https://smaileproject.github.io/attachments/logo_eu.svg" style="height: 45px; width: auto; display: block;"/>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license" style="text-decoration: none; display: block;" target="_blank">
+<img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0; height: 35px; width: auto; display: block;"/>
+</a>
+</div>
+<div class="copyright-text">
+<span style="font-size: 0.7rem; color: #444;">
+                    Cofinancé par le programme Erasmus+ de l’Union européenne • 2024-1-HR01-KA220-SCH-000254267
+                </span>
+<br/>
+<span style="font-size: 0.7rem; color: #666;">
+                    Cette œuvre est mise à disposition selon les termes de la <a href="http://creativecommons.org/licenses/by/4.0/" rel="license" style="color: #666; text-decoration: underline;">Licence internationale Creative Commons Attribution 4.0</a>.
+                </span>
+</div>
+</div>
+</div>
+<script>
+        // Automatic PDF Download Tracker for GoatCounter
+        document.addEventListener('click', function(event) {
+            // Find if the clicked element (or its parent) is a link
+            var target = event.target.closest('a');
+            if (!target) return;
+
+            // Check if the link points to a PDF
+            if (target.href.match(/\.pdf$/i)) {
+                // Send the event to GoatCounter
+                if (window.goatcounter && window.goatcounter.count) {
+                    window.goatcounter.count({
+                        path: 'pdf-download: ' + target.getAttribute('href'),
+                        title: 'PDF Downloaded',
+                        event: true
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

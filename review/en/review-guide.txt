@@ -1,0 +1,15 @@
+Review guide
+
+Please review the pages and materials in your language. These are draft translations; some graphics and original attachments are still in English.
+
+Check that the wording is natural and that activity instructions, age ranges, timings and assessment criteria are clear and accurate. Please also flag missing text, broken links or unreadable layouts.
+
+Send your suggestions to the project coordinator in whatever format is easiest: a message, plain text, a Word document or a PDF with selectable text. Free-form feedback is welcome; no form or spreadsheet is required.
+
+If possible, include the language and page URL or document filename. Quote the wording you would change and give your suggested replacement. If you are unsure of a correction, simply describe the problem.
+
+Example: French — [page URL or filename] — Current wording: … — Suggested wording: …
+
+English images, artwork, screenshots and training datasets may remain unchanged where they serve as examples. Graphics with instructions or labels needed for the activity will be reviewed separately. MOOCs will be reviewed when their content is ready.
+
+Thank you for helping improve these project materials.
